@@ -10,9 +10,7 @@ public class BracketValidator {
         this.checkingString = checkingString;
     }
 
-    private boolean validate () {
-
-        boolean result;
+    public boolean validate () {
 
         Stack<Character> stack = new Stack<>();
 
@@ -32,14 +30,5 @@ public class BracketValidator {
             }
         }
         return stack.empty();
-    }
-
-    public void checkBrackets (){
-
-        if (this.validate()) {
-            System.out.println("Ok. Всё в порядке!");
-        } else {
-            System.out.println("Скобки расставлены НЕправильно!!!");
-        }
     }
 }

@@ -8,6 +8,6 @@ public class BracketValidatorTest {
 
     @Test
     public void checkBrackets() {
-        
+
     }
 }

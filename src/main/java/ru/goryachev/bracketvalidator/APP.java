@@ -6,6 +6,7 @@ public class APP {
 
         InputForm inputForm = new InputForm();
         BracketValidator bracketValidator = new BracketValidator(inputForm.getCheckingString());
-        bracketValidator.checkBrackets();
+        Informer informer = new Informer(bracketValidator.validate());
+        informer.printMessage();
     }
 }
