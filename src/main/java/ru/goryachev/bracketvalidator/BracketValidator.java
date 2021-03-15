@@ -14,7 +14,7 @@ public class BracketValidator {
 
         boolean result;
 
-        Stack<Character> stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < checkingString.length(); i++) {
             char symbol = checkingString.charAt(i);
