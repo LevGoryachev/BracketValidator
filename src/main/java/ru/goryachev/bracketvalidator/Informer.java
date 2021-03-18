@@ -15,6 +15,5 @@ public class Informer {
         } else {
             System.out.println("Скобки расставлены НЕправильно!!!");
         }
-
     }
 }
