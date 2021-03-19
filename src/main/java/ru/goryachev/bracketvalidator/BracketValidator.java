@@ -1,6 +1,6 @@
 package ru.goryachev.bracketvalidator;
 
-import java.util.Stack;
+import java.util.*;
 
 public class BracketValidator {
 
@@ -12,23 +12,27 @@ public class BracketValidator {
 
     public boolean validate () {
 
-        Stack<Character> stack = new Stack<>();
+        //also workable:
+        //Stack<Character> stack = new Stack<>();
+        //PriorityQueue<Character> queue = new PriorityQueue<>();
+
+        LinkedList<Character> linkedList = new LinkedList<>();
 
         for (int i = 0; i < checkingString.length(); i++) {
             char symbol = checkingString.charAt(i);
             if (symbol == '(' || symbol == '{' || symbol == '[')
-                stack.push(symbol);
+                linkedList.push(symbol);
             else if (symbol == ']') {
-                if (stack.empty() || stack.pop() != '[')
+                if (linkedList.isEmpty() || linkedList.pop() != '[')
                     return false;
             } else if (symbol == '}') {
-                if (stack.empty() || stack.pop() != '{')
+                if (linkedList.isEmpty() || linkedList.pop() != '{')
                     return false;
             } else if (symbol == ')') {
-                if (stack.empty() || stack.pop() != '(')
+                if (linkedList.isEmpty() || linkedList.pop() != '(')
                     return false;
             }
         }
-        return stack.empty();
+        return linkedList.isEmpty();
     }
 }
