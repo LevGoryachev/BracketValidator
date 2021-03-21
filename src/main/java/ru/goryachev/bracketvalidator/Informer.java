@@ -1,19 +1,7 @@
 package ru.goryachev.bracketvalidator;
 
-public class Informer {
+public interface Informer {
 
-    private boolean result;
+    void showMessage();
 
-    public Informer(boolean result) {
-        this.result = result;
-    }
-
-    public void printMessage() {
-
-        if (this.result) {
-            System.out.println("Ok. Всё в порядке!");
-        } else {
-            System.out.println("Скобки расставлены НЕправильно!!!");
-        }
-    }
 }

@@ -4,9 +4,9 @@ public class APP {
 
     public static void main(String[] args) {
 
-        InputForm inputForm = new InputForm();
-        BracketValidator bracketValidator = new BracketValidator(inputForm.getCheckingString());
-        Informer informer = new Informer(bracketValidator.validate());
-        informer.printMessage();
+        InputForm inputForm = new ConsoleInput();
+        Validator validator = new BracketValidator(inputForm);
+        new TextInformer(validator).showMessage();
+        //new MessageInformer(validator).showMessage();
     }
 }
